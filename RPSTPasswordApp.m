@@ -30,7 +30,8 @@
 {
     if([[UIApplication sharedApplication] canOpenURL:self.urlScheme])
     {
-        NSString *appSchemeQuery = [NSString stringWithFormat:self.queryFormat, [self.urlScheme absoluteString], query];
+        CFStringRef encodedQuery = CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)query, NULL, CFSTR("!*'\"();:@&=+$,/?%#[]% "), kCFStringEncodingUTF8);
+        NSString *appSchemeQuery = [NSString stringWithFormat:self.queryFormat, [self.urlScheme absoluteString],  (__bridge NSString *)encodedQuery];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appSchemeQuery]];
     }
 }

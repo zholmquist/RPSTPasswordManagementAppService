@@ -20,13 +20,12 @@ Launch Password Service
 --------
 To launch a RPSTPasswordApp object with a query, just call the launchPasswordAppWithQuery: method.
 
-    #import "RPSTPasswordAppServices.h"
-    
-    NSArray *passwordServices = [[RPSTPasswordAppServices passwordManagement] services];
-    if([passwordServices count])
-    {
-        [[passwordServices objectAtIndex:0] launchPasswordAppWithQuery:@"app.net"];
-    }
+    #import "RPSTPasswordAppServices.h"  
+      
+    NSArray *passwordServices = [[RPSTPasswordAppServices passwordManagement] services];  
+    if([passwordServices count]) {  
+        [[passwordServices objectAtIndex:0] launchPasswordAppWithQuery:@"app.net"];  
+    }  
     
 TODO
 ========
