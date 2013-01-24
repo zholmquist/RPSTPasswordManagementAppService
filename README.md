@@ -1,6 +1,7 @@
 RPSTPasswordApp
 ========
 Riposte, an App.net client launched with the cleaver ability to launch 1Password from inside their app.
+The code was open sourced by the Riposte Team to allow other apps the ability to quickly do the same.
 
 Usage
 ========
@@ -20,6 +21,7 @@ Launch Password Service
 To launch a RPSTPasswordApp object with a query, just call the launchPasswordAppWithQuery: method.
 
     #import "RPSTPasswordAppServices.h"
+    
     NSArray *passwordServices = [[RPSTPasswordAppServices passwordManagement] services];
     if([passwordServices count])
     {
